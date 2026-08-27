@@ -18,9 +18,10 @@ The repository contains a small set of example images so that the notebook can b
 
 Clone the repository:
 
-```bash
-git clone https://github.com/Owlly/metric-book-transcriber.git
-cd metric-book-transcriber
+bash
+git clone https://github.com/Owlly/metric_book_transcriber.git
+cd metric_book_transcriber
+
 Create a virtual environment:
 
 python3 -m venv .venv
@@ -29,9 +30,14 @@ source .venv/bin/activate
 Install the dependencies:
 
 pip install -r requirements.txt
-API key
 
-The notebook requires a Gemini API key.
+API key
+To get a Gemini API key:
+- Go to Google AI Studio and log in using your Google account.
+- Accept the terms of service if it is your first time visiting.Open
+- Click on Get API key in the left sidebar or at the bottom left corner of the screen.
+- Click the Create API key button. Select an existing project or create a new one when prompted.
+- Copy your newly generated alphanumeric key and store it **securely**.
 
 Create your local .env file from the provided example:
 
@@ -41,11 +47,11 @@ Then edit .env:
 
 GEMINI_API_KEY=your_actual_api_key
 
-The .env file is intentionally excluded from Git and must never be committed or shared.
+The .env file is intentionally excluded from Git and **must never** be committed or shared.
 
-Usage
+**## Usage**
 
-Start JupyterLab:
+In your virtual environment, start JupyterLab:
 
 jupyter lab
 
@@ -57,68 +63,7 @@ The notebook uses the example images in:
 
 images/metr_book/
 
-and the reference data in:
+The example image (007767501_01087.jpeg) is used to "feed" Gemini as a reference together with the corresponding pre-transcribed image as metr_book_birth_ref.csv table. Better to use your own pair image and csv (manually prepared), which style is more representative to your targeted images. 
 
-metr_book_birth_ref.csv
-Input data
+Put your images to the folder images/metr_book/ to process with Gemini.
 
-The repository contains only a few example images.
-
-The full historical image collection is not included because of its size.
-
-To process a larger collection, update the input directory in the notebook:
-
-INPUT_IMAGES_DIR = Path("images/metr_book")
-Project structure
-.
-├── images/
-│   └── metr_book/
-├── metr_book_birth_ref.csv
-├── metric_book_transcriber_birth_resize-3.1flash.ipynb
-├── requirements.txt
-├── .env.example
-├── .gitignore
-└── README.md
-License
-
-TODO
-
-
-Save:
-
-**Ctrl+O → Enter → Ctrl+X**
-
-### One thing I intentionally left as `TODO`
-
-**Don't choose a license yet.**
-
-Because this is a public repository, the license matters: it determines what other people are legally allowed to do with your code. We can choose an appropriate one after you tell me whether you want others to:
-
-- freely use/modify it, including commercially;
-- freely use it but preserve attribution/license;
-- or have more restrictions.
-
----
-
-# Step 30 — Add Jupyter to `requirements.txt`
-
-There's one issue with our current `requirements.txt`.
-
-We identified the packages imported by your notebook, but someone cloning the repository also needs Jupyter to actually run it.
-
-Let's change it to:
-
-```text
-pandas
-Pillow
-python-dotenv
-google-genai
-jupyterlab
-
-Run:
-
-nano requirements.txt
-
-Replace the contents with those five lines.
-
-Save and exit.
