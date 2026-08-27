@@ -2,3 +2,4 @@ pandas
 Pillow
 python-dotenv
 google-genai
+jupyterlab
