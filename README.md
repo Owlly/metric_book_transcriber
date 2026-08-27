@@ -94,3 +94,9 @@ The notebook uses one reference image (`007767501_01087.jpeg`) and a few example
 The reference image is used to "feed" Gemini together with the corresponding pre-transcribed table from this image as `metr_book_birth_ref.csv`. It's better to use your own pair of image and CSV (manually prepared), whose style is more representative of your targeted images.
 
 Put your images into the folder `images/metr_book/` to process them with Gemini. Go through the notebook. Revise the output csv.
+
+## License
+
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
+
+See the [LICENSE](LICENSE) file for the complete license text.
